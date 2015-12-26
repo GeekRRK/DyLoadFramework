@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jj5-SJ-AJG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ace-3w-rLI">
+                                <rect key="frame" x="99" y="188" width="122" height="30"/>
+                                <animations/>
+                                <state key="normal" title="用bundle方式加载">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBundleLoadAtPathAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YnC-Iz-xLh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXK-44-ida">
+                                <rect key="frame" x="145" y="268" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="调用">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTriggerButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jfY-ET-hO2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlS-Cu-94t">
+                                <rect key="frame" x="99" y="350" width="123" height="30"/>
+                                <animations/>
+                                <state key="normal" title="用dlopen方式加载">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDlopenLoadAtPathAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BK9-eq-7h2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ace-3w-rLI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="124" id="Bz8-QU-yas"/>
+                            <constraint firstItem="BXK-44-ida" firstAttribute="top" secondItem="ace-3w-rLI" secondAttribute="bottom" constant="50" id="CpS-Li-R9N"/>
+                            <constraint firstItem="IlS-Cu-94t" firstAttribute="top" secondItem="BXK-44-ida" secondAttribute="bottom" constant="52" id="T7D-oJ-kBX"/>
+                            <constraint firstItem="IlS-Cu-94t" firstAttribute="leading" secondItem="ace-3w-rLI" secondAttribute="leading" id="WZn-rQ-Utf"/>
+                            <constraint firstItem="ace-3w-rLI" firstAttribute="centerX" secondItem="BXK-44-ida" secondAttribute="centerX" id="eUY-lc-jWJ"/>
+                            <constraint firstItem="BXK-44-ida" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ig3-98-8Rw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aEw-ON-arH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="407"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pMM-tv-ho6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jj5-SJ-AJG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bOX-gM-38H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Fu9-6b-mMC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6S-Ge-w2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="407"/>
+        </scene>
+    </scenes>
+</document>
